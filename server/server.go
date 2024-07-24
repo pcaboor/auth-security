@@ -19,6 +19,9 @@ func RunServer() {
 	r.HandleFunc("/mfa/verify", middleware.VerifyMFAHandler).Methods("POST")
 	r.HandleFunc("/generate-mfa-secret", middleware.GenerateMFASecretHandler).Methods("GET")
 
+	r.HandleFunc("/reset-confirmation", handlers.ResetConfirmation)
+	r.HandleFunc("/reset-password", handlers.ResetPassword)
+
 	//r.HandleFunc("/setcookie", setCookieHandler)
 	//r.HandleFunc("/getcookie", getCookieHandler)
 
